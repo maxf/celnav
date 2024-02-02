@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="node_modules/eruda/eruda.js"></script>
+    <script>eruda.init();</script>
+  </head>
+  <body>
+    <h1>Celnav</h1>
+    <div>
+      <label for="user-height">User height (m)</label>
+      <input name="user-height" id="user-height" value="500"/>
+    </div>
+    <div>
+      <label for="lighthouse-height">Lighthouse height (m)</label>
+      <input name="lighthouse-height" id="lighthouse-height" value="3000"/>
+    </div>
+    <div>
+      <label for="earth-radius">Radius of the Earth (m)</label>
+      <input name="earth-radius" id="earth-radius" value="6371"/>
+    </div>
+    <div>
+      <label for="lighthouse-angle">Lighthouse angle (deg)</label>
+      <input name="lighthouse-angle" id="lighthouse-angle" value="40"/>
+    </div>
+    <div>
+      <label for="sextant-reading">Sextant reading (deg)</label>
+      <input name="sextant-reading" id="sextant-reading" value="20"/>
+    </div>
+    <div>
+      <button id="go">Go</button>
+    </div>
+    <p id="message">log</p>
+    <svg id="canvas" viewbox="-10000 -6381000 20000 20000" style="border: 1px solid black" width="500px" height="500px">
+      <circle id="earth" x="0" y="0" r="6371000" stroke-width="50px" stroke="black" fill="#aae"/>
+      <line id="user" x1="0" y1="0" x2="0" y2="-6371002" stroke-width="50px" stroke="black"/>
+      <line id="lighthouse" x1="0" y1="0" x2="0" y2="-6371030" stroke-width="50px" stroke="black"/>
+
+      <line id="lighthouse-sight" x1="0" y1="0" x2="0" y2="0" stroke-width="50px" stroke="black"/>
+      <line id="horizon-sight" x1="0" y1="0" x2="0" y2="0" stroke-width="50px" stroke="black"/>
+    </svg>
+    <script src="main.js?x=9"></script>
+  </body>
+</html>
