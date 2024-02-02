@@ -1,0 +1,2 @@
+# celnav
+Celestial navigation calculator
