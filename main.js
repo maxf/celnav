@@ -92,3 +92,15 @@ const calculateAngle = function(p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y) {
 
 $('go').addEventListener('click', calculate);
 calculate();
+
+
+const distFromReading = function(earthRadius, userHeight, lighthouseHeight, sextantReading) {
+
+  const alpha1 = acos (earthRadius/(earthRadius+userHeight));
+  const B = Math.sqrt(1-(userHeight+1)*(userHeight+1));
+  const c = sextantReading * Math.tan(B);
+  const beta = Math.asin(((earthRadius+c)*sin(Math.PI - sextantReading))/(earthRadius+1))
+  const alpha2 = sextantReading - beta;
+
+  return (alpha1 + alpha2)*earthRadius;
+};
